@@ -73,7 +73,7 @@ export class BasicExampleFactory {
       pluginID: addon.data.config.addonID,
       src: rootURI + "content/preferences.xhtml",
       label: getString("prefs-title"),
-      image: `chrome://${addon.data.config.addonRef}/content/icons/favicon.png`,
+      image: `${rootURI}content/icons/favicon.png`,
     });
   }
 }
@@ -129,7 +129,7 @@ export class UIExampleFactory {
       properties: {
         type: "text/css",
         rel: "stylesheet",
-        href: `chrome://${addon.data.config.addonRef}/content/zoteroPane.css`,
+        href: `${rootURI}content/zoteroPane.css`,
       },
     });
     doc.documentElement?.appendChild(styles);
@@ -138,7 +138,7 @@ export class UIExampleFactory {
 
   @example
   static registerRightClickMenuItem() {
-    const menuIcon = `chrome://${addon.data.config.addonRef}/content/icons/favicon@0.5x.png`;
+    const menuIcon = `${rootURI}content/icons/favicon@0.5x.png`;
     // item menuitem with icon
     ztoolkit.Menu.register("item", {
       tag: "menuitem",
